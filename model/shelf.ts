@@ -1,5 +1,6 @@
 import Book from './book';
 import uuid from 'uuid/v1';
+import fs from 'fs';
 
 export default class Shelf {
   readonly id: string;
@@ -27,5 +28,22 @@ export default class Shelf {
       id: this.id,
       books: this._books
     };
+  }
+
+  public save(filePath: string) {
+    fs.writeFileSync(filePath, JSON.stringify(this));
+  }
+
+  static load(filePath: string): Shelf {
+    const shelfData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    const shelf: any = new Shelf();
+    shelf['id'] = shelfData.id;
+    shelf['_books'] = shelfData.books.map((bookData: any) => {
+      const book: any = new Book(bookData.title);
+      book['id'] = bookData.id;
+      return book;
+    });
+
+    return shelf as Shelf;
   }
 }

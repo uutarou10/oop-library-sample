@@ -1,27 +1,31 @@
 import User from './model/user';
 import Shelf from './model/shelf';
-import { ShelfRepository } from './repository/shelfRepository';
-import { ShelfRepositoryImpl } from './repository/shelfRepositoryImpl';
-import { borrowBook, returnBook } from './service/borrowBookService';
 
-const shelfRepository: ShelfRepository = new ShelfRepositoryImpl("./shelf.json");
-const shelf = shelfRepository.load();
+const shelf = Shelf.load('./shelf.json');
 const user = new User("mogamin");
 
 console.log('===== 初期状態 =====')
 printBorrowedBooks(user);
 printShelf(shelf);
 
-borrowBook(shelf, shelf.books[0], user);
-shelfRepository.save(shelf);
+const borrowBook = shelf.books[0];
+shelf.removeBook(borrowBook);
+user.borrowBook(borrowBook);
+
+shelf.save('./shelf.json');
 
 console.log('===== 1冊借りたあと =====')
 printBorrowedBooks(user);
 printShelf(shelf);
 
 console.log('===== 返却 =====');
-returnBook(shelf, user.borrowedBook[0], user);
-shelfRepository.save(shelf);
+// returnBook(shelf, user.borrowedBook[0], user);
+const returnBook = user.borrowedBook[0];
+user.returnBook(returnBook);
+shelf.addBook(returnBook);
+
+// shelfRepository.save(shelf);
+shelf.save('./shelf.json');
 printBorrowedBooks(user);
 printShelf(shelf);
 
