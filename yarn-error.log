@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/Cellar/node/10.11.0/bin/node /usr/local/Cellar/yarn/1.10.1/libexec/bin/yarn.js add -D @type/node
+
+PATH: 
+  /Users/uutarou/.go/bin:/Users/uutarou/.anyenv/envs/rbenv/shims:/Users/uutarou/.anyenv/envs/rbenv/bin:/Users/uutarou/.anyenv/envs/ndenv/bin:/Users/uutarou/.anyenv/envs/goenv/shims:/Users/uutarou/.anyenv/envs/goenv/bin:/Users/uutarou/.anyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/uutarou/google-cloud-sdk/bin:/Users/uutarou/.go/bin:/Users/uutarou/.anyenv/envs/rbenv/shims:/Users/uutarou/.anyenv/envs/rbenv/bin:/Users/uutarou/.anyenv/envs/ndenv/shims:/Users/uutarou/.anyenv/envs/ndenv/bin:/Users/uutarou/.anyenv/envs/goenv/shims:/Users/uutarou/.anyenv/envs/goenv/bin:/Users/uutarou/.anyenv/bin:/Users/uutarou/flutter/bin:/Users/uutarou/Library/Android/sdk/emulator:/Users/uutarou/Library/Android/sdk/tools:/Users/uutarou/Library/Android/sdk/tools/bin:/Users/uutarou/Library/Android/sdk/platform-tools:/Users/uutarou/flutter/bin:/Users/uutarou/Library/Android/sdk/emulator:/Users/uutarou/Library/Android/sdk/emulator:/Users/uutarou/Library/Android/sdk/tools:/Users/uutarou/Library/Android/sdk/tools/bin:/Users/uutarou/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  10.11.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@type%2fnode: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:61073:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:120166:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:121138:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:121060:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1092:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "oop-library-sample",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,13 @@
+{
+  "name": "oop-library-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "@types/uuid": "^3.4.4"
+  },
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
